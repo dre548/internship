@@ -1,3 +1,10 @@
+pip install pandas matplotlib
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Replace 'file_path' with the actual path to your CSV file
+file_path = "path_to_your_file.csv"
+
 # Try reading the CSV file using ISO-8859-1 encoding
 hiv_data = pd.read_csv(file_path, encoding="ISO-8859-1")
 hiv_data["Value"] = hiv_data["Value"].str.extract(r"(\d[\d\s]*)")[0].str.replace(" ", "").astype(float) * 1000
